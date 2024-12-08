@@ -25,17 +25,17 @@ while Loop == 1:
         for i in range(len(Balles)):
             if Balles[i] == "?":
                 Balles[i] = "B"
-            else:
-                pass
             
     elif list.count(Balles,"B") == blue:
         for i in range(len(Balles)):
             if Balles[i] == "?":
                 Balles[i] = "L"
-            else:
-                pass
+
+    BlankPercent = round(blue*100/numballes)
+    LivePercent = round(red*100/numballes)
     
     print("",blue,"Blank\n",red,"Live\n",numballes,"Balles\n\nCurrent :",Balles[0],"\n",Balles,"\n")
+    print("Next shot :\nBlank :",str(BlankPercent)+"%\nLive : "+str(LivePercent)+"%\n")
     
     todo =input("1 : Phone \n2 : Beer/Shot \n3 : End Round \n4 : Exit \n")
     
@@ -46,6 +46,7 @@ while Loop == 1:
         Balles [int(Pos)-1]= Type
         
     elif todo == "2":
+        os.system('cls')
         "Current :",Balles[0]
         numballes = numballes - 1
         
